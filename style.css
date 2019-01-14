@@ -1,0 +1,39 @@
+/* FONT */
+@font-face {
+  font-family: 'Muli-Regular';
+  src: url('/assets/Muli/Muli-Regular.ttf');
+}
+
+* {
+  font-family: 'Muli-Regular', sans-serif;
+}
+
+
+#tool-bar {
+  margin-left: 1vw;
+  border: 0.25vw solid black;
+  padding-left: 1vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-right: 2vw;
+}
+
+#chart {
+  border: 0.15vw solid black;
+  margin-top: 1vw;
+  background-color: beige;
+}
+/* #tool-bar h3 {
+  background-color: rgba(228, 233, 237, 0.5);
+  text-align: center;
+} */
+
+/* .categories {
+  display: inline-block;
+  margin-right: 1vw;
+  background-color: lightgray;
+  padding: 0.25vw 0.45vw;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
