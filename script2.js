@@ -89,7 +89,16 @@ fetch(dataUrl)
                   // Array.filter from names and compare them with the picked
                   // than trigger index of it and check index of the year??
                   // make it to a variable and pass it to data?
-
+                  var rect = document.getElementsByClassName('rect');
+                  // console.log('RECT: ', rect)
+                  // const nodelist = document.querySelectorAll('rect');
+                  // console.log('RECT: ', nodelist);
+                  // const divyArray = Array.prototype.slice.call(nodelist);
+                  // console.log('NODELIST: ', divyArray.length);
+                  if(rect) {
+                    d3.select('svg').remove('rect');
+                  }
+              // d3.select('#chart').remove('svg');
               d3.select('#chart').append('svg')
                   .attr('width', width)
                   .attr('height', height)
@@ -98,17 +107,19 @@ fetch(dataUrl)
                   .data(counts)
                   .enter().append('rect')
                   .style('fill', barColor)
+                  .attr('class', 'rect')
                   .attr('width', barWidth)
                   .attr('height', function(d) {
                       return d
                   })
-                  .attr('x', function(d, i) {
-                    console.log('CREATING THE CHART')
+                  .attr('x', function(d, i) {        
+                  
+                    // console.log('CREATING THE CHART', rect.length);
                       return i * (barWidth + barOffset);
                   })
                   .attr('y', function(d) {
                       return height -d;
-                  })         
+                  })        
           })
       })
       .catch(function(err) {
