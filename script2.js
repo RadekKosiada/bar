@@ -89,12 +89,9 @@ fetch(dataUrl)
                   // Array.filter from names and compare them with the picked
                   // than trigger index of it and check index of the year??
                   // make it to a variable and pass it to data?
+
                   var rect = document.getElementsByClassName('rect');
-                  // console.log('RECT: ', rect)
-                  // const nodelist = document.querySelectorAll('rect');
-                  // console.log('RECT: ', nodelist);
-                  // const divyArray = Array.prototype.slice.call(nodelist);
-                  // console.log('NODELIST: ', divyArray.length);
+                  //if there are already some rects elements in the DOM it will remove them first and than add new ones.            
                   if(rect) {
                     d3.select('svg').remove('rect');
                   }
