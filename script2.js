@@ -38,6 +38,8 @@ fetch(dataUrl)
       .then(function(data) {
         console.log(data.ids);
         var names = data.names; 
+        names.unshift('Pick the category');
+        console.log('names:', names)
         var selectedCategory = '';
 
           //appending 'select' tag for dropdown
@@ -59,8 +61,12 @@ fetch(dataUrl)
           //creating a p tag within category div to display the results of users pick
           d3.select('#category')
           .append('p')
-          .attr('id', 'selected-cat')
-          .text('Current category: ')
+          .attr('id', 'selected-cat');
+          //////CATEGORIES//////////////////////////////////
+          if(names.length <2) {
+            d3.select('#category').text('Pick the category')
+          }
+          
 
           //the pick will be displayed in the span appended here
           d3.select('#selected-cat')
@@ -97,6 +103,7 @@ fetch(dataUrl)
                       return d
                   })
                   .attr('x', function(d, i) {
+                    console.log('CREATING THE CHART')
                       return i * (barWidth + barOffset);
                   })
                   .attr('y', function(d) {
